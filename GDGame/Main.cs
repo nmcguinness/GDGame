@@ -283,6 +283,7 @@ namespace GDGame
              * Note: These vertices were updated on 7.12.20 to fix a Skybox draw problem.
              * The vertices were properly ordered (i.e. 0-3) in order to ensure all NORMALS faced forward.
              */
+
             vertices = new VertexPositionColorTexture[4];
 
             float halfLength = 0.5f;
