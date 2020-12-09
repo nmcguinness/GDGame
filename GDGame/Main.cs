@@ -285,7 +285,6 @@ namespace GDGame
              */
 
             vertices = new VertexPositionColorTexture[4];
-
             float halfLength = 0.5f;
             //TL
             vertices[0] = new VertexPositionColorTexture(
