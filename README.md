@@ -13,12 +13,12 @@
 
 ### Bugs
 - [x] Debug text in top LHC not drawing correctly
-- [ ] Skybox will not drawn when debug text is shown
-- [ ] Apparent z-fighting with ground plane texture in new collidable object version
-- [ ] Are transparent objects being drawn correctly i.e. sorted by camera distance?
+- [x] Skybox will not drawn when debug text is shown
+- [x] Apparent z-fighting with ground plane texture in new collidable object version
 - [x] Check blend color in UITextObject
 - [x] Boxes and spheres were not being properly rendered - CullMode issue in RenderManager
 - [x] Exit button was hidden but we were still testing for mouse click - see MyMenuManager::HandleInput - solved by Antanas
+- [ ] Are transparent objects being drawn correctly i.e. sorted by camera distance?
 
 ### Code to Explain
 - [x] How to integrate your existing code with the new Week 5 codebase
@@ -31,10 +31,10 @@
 - [x] IController and the classes which implement it.
 - [x] Create a simple enum using 2^N values on the enum values and demonstrate bitwise operators.
 - [x] ModelObject
-- [ ] Effect of SamplerState on on-screen aliasing
-- [ ] VertexFactory
 - [x] Input manager classes (MouseManager, KeyboardManager, GamePadManager)
 - [x] DrawOrder on DrawableGameComponents in Main
+- [ ] Effect of SamplerState on on-screen aliasing
+- [ ] VertexFactory
 
 ### Refactor for Efficiency
 - [x] ProjectionParameters::Projection property by adding isDirty flag
@@ -137,14 +137,16 @@
 - [x] Add support for opaque to transparent changes in DrawnActor3D to ObjectManager
 - [x] Add setting rasterizer states for transparent and opaque objects in RenderManager
 - [x] Change SoundManager to PausableGameComponent to fit into SubscribeToEvents type component
-- [ ] Add SoundManager and support for 2D and 3D sounds
+- [x] Add SoundManager and support for 2D and 3D sounds
+- [x] Add PickingManager with demo for pick and remove, pick and show info on left and right mouse click
+- [ ] 
+### Tasks - Week 10
 - [ ] Add support for SoundCategoryType in SoundManager
 - [ ] Add CycleCamera event listener code in CameraManager
 - [ ] Static variables/enum to represent symbolic name for resolution ResolutionType.SVGA
 - [ ] Add gamepad thumbsticks to GamePadManager (map from (-1,1) to (0,0) -> (w,h))
 - [ ] Add vibration support to GamePadManager
 - [ ] Introduce in-built Monogame effects in demo project
-- [ ] Add PickingManager with demo for pick and remove, pick and show info on left and right mouse click
 - [ ] Add Mouse picking to MouseManager
 - [ ] Remove hard-coded (512, 384) in Controller and replace with screenCentre
 - [ ] Add tiling functionality (see grass plane)
