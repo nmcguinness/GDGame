@@ -140,8 +140,10 @@
 - [x] Change SoundManager to PausableGameComponent to fit into SubscribeToEvents type component
 - [x] Add SoundManager and support for 2D and 3D sounds
 - [x] Add PickingManager with demo for pick and remove, pick and show info on left and right mouse click
-- [ ] 
+
 ### Tasks - Week 10
+- [x] Add bug fix to MouseManager::GetMouseRayDirection() that was not allowing you to pick from a user-specified screenPosition
+- [x] Remove unused GraphicsDevice parameter in Draw() calls for I3DDrawable, DrawnActor3D, ModelObject and PrimitiveObject
 - [ ] Add support for SoundCategoryType in SoundManager
 - [ ] Add CycleCamera event listener code in CameraManager
 - [ ] Static variables/enum to represent symbolic name for resolution ResolutionType.SVGA
