@@ -61,7 +61,7 @@ namespace GDLibrary.Managers
             foreach (DrawnActor3D actor in objectManager.OpaqueList)
             {
                 if ((actor.StatusType & StatusType.Drawn) == StatusType.Drawn)
-                    actor.Draw(gameTime, activeCamera, GraphicsDevice);
+                    actor.Draw(gameTime, activeCamera);
             }
 
             //sort the transparent objects so that those closest to the camera are the LAST drawn
@@ -71,7 +71,7 @@ namespace GDLibrary.Managers
             foreach (DrawnActor3D actor in objectManager.TransparentList)
             {
                 if ((actor.StatusType & StatusType.Drawn) == StatusType.Drawn)
-                    actor.Draw(gameTime, activeCamera, GraphicsDevice);
+                    actor.Draw(gameTime, activeCamera);
             }
         }
 

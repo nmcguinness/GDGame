@@ -39,7 +39,7 @@ namespace GDLibrary.Actors
             this.effectParameters = effectParameters;
         }
 
-        public virtual void Draw(GameTime gameTime, Camera3D camera, GraphicsDevice graphicsDevice)
+        public virtual void Draw(GameTime gameTime, Camera3D camera)
         {
             //does nothing - see child classes
         }

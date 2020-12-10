@@ -3,6 +3,7 @@ using GDLibrary.Actors;
 using GDLibrary.Enums;
 using GDLibrary.Events;
 using GDLibrary.GameComponents;
+using GDLibrary.Parameters;
 using JigLibX.Physics;
 using Microsoft.Xna.Framework;
 using System;
@@ -188,7 +189,12 @@ namespace GDLibrary.Managers
             //does this object return true in the predicate
             if (collisionPredicate(pickedObject))
             {
-                object[] parameters = { pickedObject };
+                Vector3 screenSpace = cameraManager.ActiveCamera.Viewport.Project(
+                    Vector3.Zero, cameraManager.ActiveCamera.Projection,
+                    cameraManager.ActiveCamera.View,
+                            pickedObject.Transform3D.World);
+
+                object[] parameters = { pickedObject, screenSpace };
                 EventDispatcher.Publish(new EventData(EventCategoryType.UIPicking, EventActionType.OnObjectPicked, parameters));
             }
             else

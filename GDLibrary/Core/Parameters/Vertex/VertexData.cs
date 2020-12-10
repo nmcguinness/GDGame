@@ -21,7 +21,31 @@ namespace GDLibrary.Parameters
         #endregion Fields
 
         #region Properties
-
+        public PrimitiveType PrimitiveType
+        {
+            get
+            {
+                return this.primitiveType;
+            }
+        }
+        public int PrimitiveCount
+        {
+            get
+            {
+                return this.primitiveCount;
+            }
+        }
+        public T[] Vertices
+        {
+            get
+            {
+                return this.vertices;
+            }
+            set
+            {
+                this.vertices = value;
+            }
+        }
         public int GetPrimitiveCount()
         {
             return primitiveCount;
@@ -54,12 +78,12 @@ namespace GDLibrary.Parameters
             this.primitiveCount = primitiveCount;
         }
 
-        public void Draw(GameTime gameTime, BasicEffect effect, GraphicsDevice graphicsDevice)
+        public virtual void Draw(GameTime gameTime, BasicEffect effect)
         {
             //serialising the vertices from RAM to VRAM
             //constrained by the bandwidth of the bus and
             //by the lower of the two clock speeds (cpu, gpu)
-            graphicsDevice.DrawUserPrimitives<T>(primitiveType,
+            effect.GraphicsDevice.DrawUserPrimitives<T>(primitiveType,
                 vertices, 0, primitiveCount);
         }
 

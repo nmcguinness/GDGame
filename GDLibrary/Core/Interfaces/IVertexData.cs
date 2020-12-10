@@ -10,7 +10,7 @@ namespace GDLibrary.Interfaces
     /// <see cref="GDLibrary.Actors.PrimitiveObject"/>
     public interface IVertexData : ICloneable
     {
-        void Draw(GameTime gameTime, BasicEffect effect, GraphicsDevice graphicsDevice);
+        void Draw(GameTime gameTime, BasicEffect effect);
 
         //getters
         PrimitiveType GetPrimitiveType();

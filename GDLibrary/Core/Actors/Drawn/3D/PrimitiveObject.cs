@@ -43,10 +43,10 @@ namespace GDLibrary.Actors
 
         #endregion Constructors
 
-        public override void Draw(GameTime gameTime, Camera3D camera, GraphicsDevice graphicsDevice)
+        public override void Draw(GameTime gameTime, Camera3D camera)
         {
             EffectParameters.Draw(Transform3D.World, camera);
-            IVertexData.Draw(gameTime, EffectParameters.Effect, graphicsDevice);
+            IVertexData.Draw(gameTime, EffectParameters.Effect);
         }
 
         public new object Clone()

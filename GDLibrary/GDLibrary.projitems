@@ -103,9 +103,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Core\Managers\Physics\" />
     <Folder Include="$(MSBuildThisFileDirectory)Core\Managers\Object\" />
     <Folder Include="$(MSBuildThisFileDirectory)Core\Parameters\Camera\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Core\Parameters\Effect\" />
     <Folder Include="$(MSBuildThisFileDirectory)Core\Parameters\Controller\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Core\Parameters\Vertex\" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />

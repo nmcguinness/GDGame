@@ -10,6 +10,6 @@ namespace GDLibrary.Interfaces
     /// </summary>
     public interface I3DDrawable : ICloneable
     {
-        void Draw(GameTime gameTime, Camera3D camera, GraphicsDevice graphicsDevice);
+        void Draw(GameTime gameTime, Camera3D camera);
     }
 }

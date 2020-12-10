@@ -369,6 +369,16 @@ namespace GDGame
 #endif
             #endregion Debug & Demo
 
+            //cameraManager.ActiveCamera.Viewport;
+
+            Viewport viewPort = new Viewport(0, 0, 1024, 768);
+            Matrix view = Matrix.CreateLookAt(new Vector3(0, 0, 10), Vector3.Zero, Vector3.UnitY);
+            Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver2,
+                1024 / 768f, 1, 1000);
+
+            Vector3 screenSpace = viewPort.Project(Vector3.Zero, projection, view,
+                Matrix.Identity * Matrix.CreateTranslation(2, 0, 0));
+
             base.Initialize();
         }
 
@@ -428,7 +438,7 @@ namespace GDGame
                 0,
                 texture,
                 new Microsoft.Xna.Framework.Rectangle(0, 0, texture.Width, texture.Height), //how much of source image do we want to draw?
-                this.mouseManager);
+                mouseManager);
 
             uiManager.Add(uiMouseObject);
             #endregion Mouse Reticule & Text
@@ -493,67 +503,67 @@ namespace GDGame
 
             #region All Menu Background Images
             //background main
-            texture = this.textureDictionary["exitmenuwithtrans"];
-            fullScreenScaleFactor = new Vector2((float)this._graphics.PreferredBackBufferWidth / texture.Width, (float)this._graphics.PreferredBackBufferHeight / texture.Height);
+            texture = textureDictionary["exitmenuwithtrans"];
+            fullScreenScaleFactor = new Vector2((float)_graphics.PreferredBackBufferWidth / texture.Width, (float)_graphics.PreferredBackBufferHeight / texture.Height);
 
             transform2D = new Transform2D(fullScreenScaleFactor);
             uiObject = new UITextureObject("main_bckgnd", ActorType.UITextureObject, StatusType.Drawn,
                 transform2D, Color.LightGreen, 1, SpriteEffects.None, texture,
                 new Microsoft.Xna.Framework.Rectangle(0, 0, texture.Width, texture.Height));
-            this.menuManager.Add("main", uiObject);
+            menuManager.Add("main", uiObject);
 
             //background audio
-            texture = this.textureDictionary["audiomenu"];
-            fullScreenScaleFactor = new Vector2((float)this._graphics.PreferredBackBufferWidth / texture.Width, (float)this._graphics.PreferredBackBufferHeight / texture.Height);
+            texture = textureDictionary["audiomenu"];
+            fullScreenScaleFactor = new Vector2((float)_graphics.PreferredBackBufferWidth / texture.Width, (float)_graphics.PreferredBackBufferHeight / texture.Height);
             transform2D = new Transform2D(fullScreenScaleFactor);
             uiObject = new UITextureObject("audio_bckgnd", ActorType.UITextureObject, StatusType.Drawn,
                 transform2D, Color.White, 1, SpriteEffects.None, texture, new Microsoft.Xna.Framework.Rectangle(0, 0, texture.Width, texture.Height));
-            this.menuManager.Add("audio", uiObject);
+            menuManager.Add("audio", uiObject);
 
             //background controls
-            texture = this.textureDictionary["controlsmenu"];
-            fullScreenScaleFactor = new Vector2((float)this._graphics.PreferredBackBufferWidth / texture.Width, (float)this._graphics.PreferredBackBufferHeight / texture.Height);
+            texture = textureDictionary["controlsmenu"];
+            fullScreenScaleFactor = new Vector2((float)_graphics.PreferredBackBufferWidth / texture.Width, (float)_graphics.PreferredBackBufferHeight / texture.Height);
             transform2D = new Transform2D(fullScreenScaleFactor);
             uiObject = new UITextureObject("controls_bckgnd", ActorType.UITextureObject, StatusType.Drawn,
                 transform2D, Color.White, 1, SpriteEffects.None, texture, new Microsoft.Xna.Framework.Rectangle(0, 0, texture.Width, texture.Height));
-            this.menuManager.Add("controls", uiObject);
+            menuManager.Add("controls", uiObject);
 
             //background exit
-            texture = this.textureDictionary["exitmenuwithtrans"];
-            fullScreenScaleFactor = new Vector2((float)this._graphics.PreferredBackBufferWidth / texture.Width, (float)this._graphics.PreferredBackBufferHeight / texture.Height);
+            texture = textureDictionary["exitmenuwithtrans"];
+            fullScreenScaleFactor = new Vector2((float)_graphics.PreferredBackBufferWidth / texture.Width, (float)_graphics.PreferredBackBufferHeight / texture.Height);
             transform2D = new Transform2D(fullScreenScaleFactor);
             uiObject = new UITextureObject("exit_bckgnd", ActorType.UITextureObject, StatusType.Drawn,
                 transform2D, Color.White, 1, SpriteEffects.None, texture, new Microsoft.Xna.Framework.Rectangle(0, 0, texture.Width, texture.Height));
-            this.menuManager.Add("exit", uiObject);
+            menuManager.Add("exit", uiObject);
             #endregion All Menu Background Images
 
             //main menu buttons
-            texture = this.textureDictionary["genericbtn"];
+            texture = textureDictionary["genericbtn"];
 
             Vector2 origin = new Vector2(texture.Width / 2, texture.Height / 2);
 
             Integer2 imageDimensions = new Integer2(texture.Width, texture.Height);
 
             //play
-            transform2D = new Transform2D(this.screenCentre - new Vector2(0, 50), 0, Vector2.One, origin, imageDimensions);
+            transform2D = new Transform2D(screenCentre - new Vector2(0, 50), 0, Vector2.One, origin, imageDimensions);
             uiObject = new UIButtonObject("play", ActorType.UITextureObject, StatusType.Drawn,
                 transform2D, Color.White, 1, SpriteEffects.None, texture,
                 new Microsoft.Xna.Framework.Rectangle(0, 0, texture.Width, texture.Height),
                 "Play",
-                this.fontDictionary["menu"],
+                fontDictionary["menu"],
                 new Vector2(1, 1),
                 Color.Blue,
                 new Vector2(0, 0));
-            this.menuManager.Add("main", uiObject);
+            menuManager.Add("main", uiObject);
 
             //exit
-            transform2D = new Transform2D(this.screenCentre + new Vector2(0, 50), 0, Vector2.One, origin, imageDimensions);
+            transform2D = new Transform2D(screenCentre + new Vector2(0, 50), 0, Vector2.One, origin, imageDimensions);
             uiObject = new UIButtonObject("exit", ActorType.UITextureObject,
                 StatusType.Update | StatusType.Drawn,
              transform2D, Color.White, 1, SpriteEffects.None, texture,
              new Microsoft.Xna.Framework.Rectangle(0, 0, texture.Width, texture.Height),
              "Exit",
-             this.fontDictionary["menu"],
+             fontDictionary["menu"],
              new Vector2(1, 1),
              Color.Blue,
              new Vector2(0, 0));
@@ -564,10 +574,10 @@ namespace GDGame
             uiObject.ControllerList.Add(new UIScaleLerpController("slc1", ControllerType.ScaleLerpOverTime,
               mouseManager, new TrigonometricParameters(0.02f, 1, 0)));
 
-            this.menuManager.Add("main", uiObject);
+            menuManager.Add("main", uiObject);
 
             //finally dont forget to SetScene to say which menu should be drawn/updated!
-            this.menuManager.SetScene("main");
+            menuManager.SetScene("main");
         }
 
         private void InitEventDispatcher()
@@ -631,7 +641,7 @@ namespace GDGame
             Components.Add(keyboardManager);
 
             //mouse
-            mouseManager = new MouseManager(this, true, physicsManager, this.screenCentre);
+            mouseManager = new MouseManager(this, true, physicsManager, screenCentre);
             Components.Add(mouseManager);
 
             //object
@@ -670,7 +680,7 @@ namespace GDGame
 
             //add menu
             menuManager = new MyMenuManager(this, StatusType.Update | StatusType.Drawn, _spriteBatch,
-                this.mouseManager, this.keyboardManager);
+                mouseManager, keyboardManager);
             menuManager.DrawOrder = 5; //highest number of all drawable managers since we want it drawn on top!
             Components.Add(menuManager);
 

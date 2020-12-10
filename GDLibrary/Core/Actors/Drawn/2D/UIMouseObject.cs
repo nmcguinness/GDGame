@@ -115,7 +115,8 @@ namespace GDLibrary.Actors
             if (eventData.EventActionType == EventActionType.OnObjectPicked)
             {
                 CollidableObject pickedObject = eventData.Parameters[0] as CollidableObject;
-                text = pickedObject.ID;
+                Vector3 screenSpace = (Vector3)eventData.Parameters[1];
+                text = pickedObject.ID + " at " + screenSpace.ToString();
             }
             else if (eventData.EventActionType == EventActionType.OnNoObjectPicked)
             {

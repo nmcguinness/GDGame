@@ -325,7 +325,7 @@ namespace GDLibrary.Managers
         public Microsoft.Xna.Framework.Ray GetMouseRay(Camera3D camera)
         {
             //get the positions of the mouse in screen space
-            Vector3 near = new Vector3(newState.X, Position.Y, 0);
+            Vector3 near = new Vector3(newState.X, newState.Y, 0);
 
             //convert from screen space to world space
             near = camera.Viewport.Unproject(near, camera.Projection, camera.View, Matrix.Identity);
@@ -342,7 +342,7 @@ namespace GDLibrary.Managers
         public Microsoft.Xna.Framework.Ray GetMouseRayFromNearPosition(Camera3D camera, Vector3 near)
         {
             //get the positions of the mouse in screen space
-            Vector3 far = new Vector3(newState.X, Position.Y, 1);
+            Vector3 far = new Vector3(newState.X, newState.Y, 1);
 
             //convert from screen space to world space
             far = camera.Viewport.Unproject(far, camera.Projection, camera.View, Matrix.Identity);
@@ -361,7 +361,8 @@ namespace GDLibrary.Managers
         {
             //get the positions of the mouse in screen space
             Vector3 near = new Vector3(screenPosition.X, screenPosition.Y, 0);
-            Vector3 far = new Vector3(Position, 1);
+            //bug with mouse picking - thanks Paudric Smith
+            Vector3 far = new Vector3(screenPosition.X, screenPosition.Y, 1);
 
             //convert from screen space to world space
             near = camera.Viewport.Unproject(near, camera.Projection, camera.View, Matrix.Identity);

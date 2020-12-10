@@ -142,7 +142,7 @@ namespace GDLibrary.Parameters
             Alpha = alpha;
         }
 
-        public void Draw(Matrix world, Camera3D camera)
+        public virtual void Draw(Matrix world, Camera3D camera)
         {
             effect.World = world;
             effect.View = camera.View;

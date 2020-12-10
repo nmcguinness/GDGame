@@ -75,7 +75,7 @@ namespace GDLibrary.Actors
             }
         }
 
-        public override void Draw(GameTime gameTime, Camera3D camera, GraphicsDevice graphicsDevice)
+        public override void Draw(GameTime gameTime, Camera3D camera)
         {
             EffectParameters.Effect.View = camera.View;
             EffectParameters.Effect.Projection = camera.Projection;
