@@ -14,6 +14,8 @@ namespace GDLibrary.Managers
     /// </summary>
     public sealed class Cue : IDisposable
     {
+        public static readonly int NO_LIMIT_SPECIFIED = -1;
+
         #region Fields
         private string id;
         private SoundEffect soundEffect;
@@ -40,6 +42,40 @@ namespace GDLibrary.Managers
             get
             {
                 return soundEffect;
+            }
+        }
+
+        public int MaxPlayCount
+        {
+            get
+            {
+                return maxPlayCount;
+            }
+            set
+            {
+                maxPlayCount = value > 0 ? value : 1;
+            }
+        }
+        public int TimeToLiveInMs
+        {
+            get
+            {
+                return timeToLiveInMs;
+            }
+            set
+            {
+                timeToLiveInMs = value > 0 ? value : NO_LIMIT_SPECIFIED;
+            }
+        }
+        public int MinTimeSinceLastPlayedInMs
+        {
+            get
+            {
+                return MinTimeSinceLastPlayedInMs;
+            }
+            set
+            {
+                minTimeSinceLastPlayedInMs = value > 0 ? value : NO_LIMIT_SPECIFIED;
             }
         }
         public bool IsLooped

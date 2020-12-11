@@ -29,6 +29,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Containers\ContentDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Containers\ControllerList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Containers\EventHandlerList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Events\Scheduler\EventScheduler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Controllers\3D\Actor\Curve3DController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Controllers\3D\Actor\DriveController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Controllers\3D\Actor\FirstPersonController.cs" />
@@ -97,6 +98,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Core\Controllers\2D\UI\" />
     <Folder Include="$(MSBuildThisFileDirectory)Core\Controllers\3D\" />
     <Folder Include="$(MSBuildThisFileDirectory)Core\Events\Dispatcher\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Core\Events\Scheduler\" />
     <Folder Include="$(MSBuildThisFileDirectory)Core\Events\Parameters\" />
     <Folder Include="$(MSBuildThisFileDirectory)Core\Managers\Camera\" />
     <Folder Include="$(MSBuildThisFileDirectory)Core\Managers\Render\" />
