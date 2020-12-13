@@ -77,6 +77,7 @@ namespace GDGame
         private UIManager uiManager;
         private MyMenuManager menuManager;
         private SoundManager soundManager;
+        private EventSchedulerV2 scheduler;
 #endif
         #endregion Temp Vars Used For Demos
 
@@ -368,16 +369,6 @@ namespace GDGame
             DemoEventDispatcherV2();
 #endif
             #endregion Debug & Demo
-
-            //cameraManager.ActiveCamera.Viewport;
-
-            Viewport viewPort = new Viewport(0, 0, 1024, 768);
-            Matrix view = Matrix.CreateLookAt(new Vector3(0, 0, 10), Vector3.Zero, Vector3.UnitY);
-            Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver2,
-                1024 / 768f, 1, 1000);
-
-            Vector3 screenSpace = viewPort.Project(Vector3.Zero, projection, view,
-                Matrix.Identity * Matrix.CreateTranslation(2, 0, 0));
 
             base.Initialize();
         }

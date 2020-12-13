@@ -117,7 +117,8 @@
         UI,
         Object,
         Opacity,
-        UIPicking
+        UIPicking,
+        Scheduler
         //add more here...
     }
 
@@ -182,6 +183,8 @@
         OnPlay3D,
         OnObjectPicked,
         OnNoObjectPicked,
+        OnAdd,
+        OnReset,
 
         //add more here...
     }

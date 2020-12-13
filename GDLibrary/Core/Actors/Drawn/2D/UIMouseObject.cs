@@ -14,7 +14,6 @@ namespace GDLibrary.Actors
         private SpriteFont spriteFont;
         private Color textColor;
         private Vector2 textOffsetPosition, textScale, textOrigin, textDimensions;
-        private Vector2 origin;
         private MouseManager mouseManager;
         #endregion Fields
 

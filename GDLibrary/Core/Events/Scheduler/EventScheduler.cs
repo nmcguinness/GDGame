@@ -31,13 +31,14 @@ namespace GDLibrary.Events
         #endregion Fields
 
         #region Properties
-        public string Id { get => id; set => id = value; }
+        public string ID { get => id; set => id = value.Trim(); }
         #endregion Properties
 
-        #region Constructors & Core Methods
+        #region Constructors & Core
+
         public EventScheduler(string id)
         {
-            Id = id;
+            ID = id;
             scheduledEventList = new List<ScheduledEvent>();
         }
 
@@ -151,7 +152,8 @@ namespace GDLibrary.Events
                 timer.Dispose();
             }
         }
-        #endregion Constructors & Core Methods
+
+        #endregion Constructors & Core
     }
 
     public sealed class ScheduledEvent
